@@ -18,10 +18,29 @@ X = pd.DataFrame(iris.data, columns=iris.feature_names)
 # Sidebar inputs
 st.sidebar.header("🔧 Input Features")
 
-sepal_length = st.sidebar.slider("Sepal Length", float(X.min()[0]), float(X.max()[0]))
-sepal_width = st.sidebar.slider("Sepal Width", float(X.min()[1]), float(X.max()[1]))
-petal_length = st.sidebar.slider("Petal Length", float(X.min()[2]), float(X.max()[2]))
-petal_width = st.sidebar.slider("Petal Width", float(X.min()[3]), float(X.max()[3]))
+sepal_length = st.sidebar.slider(
+    "Sepal Length",
+    float(X.min().iloc[0]),
+    float(X.max().iloc[0])
+)
+
+sepal_width = st.sidebar.slider(
+    "Sepal Width",
+    float(X.min().iloc[1]),
+    float(X.max().iloc[1])
+)
+
+petal_length = st.sidebar.slider(
+    "Petal Length",
+    float(X.min().iloc[2]),
+    float(X.max().iloc[2])
+)
+
+petal_width = st.sidebar.slider(
+    "Petal Width",
+    float(X.min().iloc[3]),
+    float(X.max().iloc[3])
+)
 
 input_data = pd.DataFrame({
     'sepal length (cm)': [sepal_length],
